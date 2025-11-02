@@ -1,0 +1,179 @@
+/* Stile Generale */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec; /* Rosa molto chiaro - Colore romantico */
+    color: #4a148c; /* Viola scuro */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #ff80ab;
+    color: white;
+    padding: 40px 20px;
+    /* Rimuovi text-align: center; se l'hai messo nel body, altrimenti va bene */
+}
+
+.header-content {
+    /* Mantiene tutto centrato all'interno dell'header */
+    text-align: center; 
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+/* Stile per il contenitore delle foto e del cuore */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Allinea gli elementi verticalmente */
+    margin: 20px 0;
+}
+
+/* Stile per le foto circolari */
+.photo-circle {
+    width: 150px; /* Larghezza del cerchio */
+    height: 150px; /* Altezza del cerchio */
+    border-radius: 50%; /* Rende l'elemento un cerchio */
+    overflow: hidden; /* Nasconde ciò che è fuori dal cerchio */
+    border: 5px solid white; /* Bordo bianco per far risaltare */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra tutto il cerchio senza distorsioni */
+    display: block;
+}
+
+/* Stile e animazione per il cuore */
+.heart-icon {
+    font-size: 3em;
+    margin: 0 20px;
+    
+    /* Applica la nuova animazione */
+    animation: heartbeat 2s infinite ease-in-out; /* Durata di 2 secondi, infinito, con accelerazione/decelerazione */
+}
+
+/* Keyframes per l'animazione del "battito" del cuore */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        color: #ff80ab; /* Rosa chiaro iniziale */
+        text-shadow: 0 0 5px rgba(255, 128, 171, 0.5);
+    }
+    15% {
+        transform: scale(1.15); /* Battito rapido e intenso */
+        color: #880e4f; /* Rosso/Viola scuro (punta del battito) */
+        text-shadow: 0 0 10px rgba(136, 14, 79, 0.8);
+    }
+    30% {
+        transform: scale(1.05); /* Ritorno al normale */
+        color: #ff80ab;
+        text-shadow: 0 0 5px rgba(255, 128, 171, 0.5);
+    }
+    45% {
+        transform: scale(1.2); /* Battito secondario, più ampio */
+        color: #d81b60; /* Rosso più profondo */
+        text-shadow: 0 0 15px rgba(216, 27, 96, 0.9);
+    }
+    60% {
+        transform: scale(1); /* Ritorno alla quiete */
+        color: #ff80ab;
+        text-shadow: none;
+    }
+    100% {
+        transform: scale(1); /* Mantenimento dello stato di quiete */
+        color: #ff80ab;
+        text-shadow: none;
+    }
+}
+#timer-sezione {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-bottom: 3px solid #ff80ab;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.time-unit {
+    background-color: #f8bbd0;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.time-unit span {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: #880e4f;
+}
+
+#playlist-sezione, #storia-sezione {
+    padding: 60px 20px;
+}
+
+#playlist-sezione iframe {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+#galleria-sezione {
+    padding: 60px 20px;
+    background-color: #fff8f8; /* Un colore di sfondo leggermente diverso */
+}
+
+.photo-grid {
+    display: grid; /* Abilita la griglia CSS */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Rende la griglia responsive */
+    gap: 20px; /* Spazio tra gli elementi della griglia */
+    max-width: 1200px; /* Larghezza massima per la griglia */
+    margin: 40px auto 0 auto; /* Centra la griglia e aggiunge margine superiore */
+}
+
+.photo-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden; /* Nasconde ciò che esce dai bordi arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leggera ombra */
+    transition: transform 0.3s ease-in-out; /* Animazione al passaggio del mouse */
+}
+
+.photo-item:hover {
+    transform: translateY(-5px); /* Effetto leggero di sollevamento al passaggio del mouse */
+}
+
+.photo-item img {
+    width: 100%; /* L'immagine occupa tutta la larghezza dell'elemento */
+    height: 250px; /* Altezza fissa per le immagini */
+    object-fit: cover; /* Ritaglia l'immagine per coprire l'area senza distorcerla */
+    object-position: center;
+    display: block; /* Rimuove lo spazio extra sotto l'immagine */
+}
+
+.photo-caption {
+    padding: 15px;
+    font-size: 1.1em;
+    color: #5d001e; /* Colore testo per le didascalie */
+    margin: 0;
+    text-align: center;
+    background-color: #fce4ec; /* Sfondo leggero per la didascalia */
+}
+
+footer {
+    background-color: #ff80ab;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+}
