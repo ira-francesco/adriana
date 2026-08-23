@@ -1,115 +1,153 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noi e il Nostro Amore ❤️</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francesco & Adriana ♥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="media/gallery/manifest.js"></script>
 </head>
 <body>
-   <header>
-    <div class="header-content">
-        <h1>Francesco & Adriana</h1>
-        
-        <div class="profile-container">
-            <div class="photo-circle" id="tua-foto">
-                <img src="media/io.jpg">
-            </div>
-            
-            <span class="heart-icon"><img style="height: 80px; height: 80px;" src="media/190-1905759_minecraft-heart-8-bit-heart-transparent.png" alt=""></span>
-            
-            <div class="photo-circle" id="sua-foto">
-                <img src="media/lei.jpg">
-            </div>
-        </div>
-        
-        <p>Insieme dal: 30 Agosto 2025</p>
+
+  <!-- HERO -->
+  <header class="hero">
+    <!-- Floating hearts/stars decoration -->
+    <div class="floaters" aria-hidden="true">
+      <span class="floater" style="--x:6%;  --delay:0s;   --dur:7s">✦</span>
+      <span class="floater" style="--x:16%; --delay:1.4s; --dur:9s">✧</span>
+      <span class="floater" style="--x:28%; --delay:0.7s; --dur:8s">✦</span>
+      <span class="floater" style="--x:45%; --delay:2.1s; --dur:6.5s">✧</span>
+      <span class="floater" style="--x:60%; --delay:0.3s; --dur:10s">✦</span>
+      <span class="floater" style="--x:74%; --delay:1.8s; --dur:7.5s">✦</span>
+      <span class="floater" style="--x:85%; --delay:0.9s; --dur:8.5s">✧</span>
+      <span class="floater" style="--x:93%; --delay:2.7s; --dur:9s">✦</span>
     </div>
-</header>
 
-    <section id="timer-sezione">
-        <h2>Quanto Tempo è Passato?</h2>
-        <div id="timer">
-            <div class="time-unit"><span id="days">00</span> Giorni</div>
-            <div class="time-unit"><span id="hours">00</span> Ore</div>
-            <div class="time-unit"><span id="minutes">00</span> Minuti</div>
-            <div class="time-unit"><span id="seconds">00</span> Secondi</div>
+    <div class="hero-inner">
+
+      <h1 class="hero-title reveal-hero">
+        Francesco<br>
+        <span class="title-amp">&amp;</span><br>
+        Adriana
+      </h1>
+
+      <div class="profile-pair reveal-hero">
+        <div class="profile-frame" id="tua-foto">
+          <img src="media/io.jpg" alt="Francesco">
         </div>
+
+        <div class="heart-center" aria-hidden="true">
+          <img
+            src="media/190-1905759_minecraft-heart-8-bit-heart-transparent.png"
+            alt=""
+            class="mc-heart">
+        </div>
+
+        <div class="profile-frame" id="sua-foto">
+          <img src="media/lei.jpg" alt="Adriana">
+        </div>
+      </div>
+
+      <time class="hero-date reveal-hero" datetime="2025-08-30">— dal 30.08.2025 —</time>
+
+      <div id="hero-map" class="reveal-hero" role="img" aria-label="Mappa di Messina Centrale, dove ci siamo dichiarati"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- TIMER -->
+    <section id="timer-sezione" aria-label="Tempo trascorso insieme">
+      <div class="section-inner">
+        <p class="section-tag reveal">— tempo insieme —</p>
+        <div id="timer" role="timer" aria-live="off">
+          <div class="time-unit reveal">
+            <span class="time-number" id="days">0</span>
+            <span class="time-label">giorni</span>
+          </div>
+          <span class="time-colon reveal" aria-hidden="true">:</span>
+          <div class="time-unit reveal">
+            <span class="time-number" id="hours">00</span>
+            <span class="time-label">ore</span>
+          </div>
+          <span class="time-colon reveal" aria-hidden="true">:</span>
+          <div class="time-unit reveal">
+            <span class="time-number" id="minutes">00</span>
+            <span class="time-label">minuti</span>
+          </div>
+          <span class="time-colon reveal" aria-hidden="true">:</span>
+          <div class="time-unit reveal">
+            <span class="time-number" id="seconds">00</span>
+            <span class="time-label">secondi</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="playlist-sezione">
-  <h2>La Nostra Colonna Sonora 🎶</h2>
-  <iframe
-    src="https://open.spotify.com/embed/playlist/5EMRhLvPGlSwbhv0aVsRbx"
-    width="100%"
-    height="352"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-</section>
-    
-
-        <section id="galleria-sezione">
-        <h2>I Nostri Momenti Insieme 📸</h2>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="media/0af08155-6bb5-4f4a-8037-2dcc902884b0.jfif" alt="Descrizione Foto 1">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/0e48fb11-d00b-4bf3-b94d-2c46eb717947.jfif" alt="Descrizione Foto 2">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/33a09445-1e6d-45a3-8de4-d53aa84dd37e.jfif" alt="Descrizione Foto 3">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/50ef620a-4e70-4a96-a43c-ff52c81e7ca3.jfif" alt="Descrizione Foto 4">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/bimbo.jfif" alt="Descrizione Foto 5">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/777780be-4e8f-4669-9716-b60920e6f57a.jfif" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/9b40b5b4-46d4-46ea-8d0f-7039eaa811da.jfif" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/aa725312-4823-421d-a09f-fbe3c00f7228.jfif" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/e626d753-f3f0-4c80-aed7-39ae7eee4e2b.jfif" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/ffd8036d-cf73-4f9c-9e17-740a5feddf0b.jfif" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/corvina.jpg" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            <div class="photo-item">
-                <img src="media/io capelli.jpg" alt="Descrizione Foto 6">
-                <p class="photo-caption"></p>
-            </div>
-            </div>
+    <!-- SPOTIFY -->
+    <section id="playlist-sezione" aria-label="La nostra playlist">
+      <div class="section-inner">
+        <p class="section-tag reveal">— colonna sonora ♪ —</p>
+        <h2 class="section-heading reveal">la nostra musica</h2>
+        <div class="spotify-wrap reveal">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/5198AlTHJioYNSDWVDmXsV"
+            width="100%"
+            height="380"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="La nostra playlist Spotify">
+          </iframe>
+        </div>
+      </div>
     </section>
 
-    
+    <!-- CITAZIONI -->
+    <section id="citazioni-sezione" aria-label="Citazioni d'amore">
+      <div class="section-inner">
+        <p class="section-tag reveal">— voci nel silenzio —</p>
+        <div class="quote-carousel reveal">
+          <blockquote class="quote-block">
+            <p class="quote-text"></p>
+            <cite class="quote-author"></cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>© Creato con Amore 💖</p>
-    </footer>
+    <!-- GALLERY -->
+    <section id="galleria-sezione" aria-label="I nostri momenti">
+      <div class="section-inner">
+        <p class="section-tag reveal">— il nostro rullino —</p>
+        <h2 class="section-heading reveal">i nostri momenti</h2>
+        <div class="gallery-grid"></div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore foto" hidden>
+    <button class="lightbox-close" aria-label="Chiudi">✕</button>
+    <button class="lightbox-prev" aria-label="Foto precedente">◀</button>
+    <button class="lightbox-next" aria-label="Foto successiva">▶</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="Foto ingrandita">
+    </div>
+    <span class="lightbox-counter" aria-live="polite"></span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">con amore &nbsp;·&nbsp; F &amp; A &nbsp;·&nbsp; 2025</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
